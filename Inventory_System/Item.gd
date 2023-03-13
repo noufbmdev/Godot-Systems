@@ -1,20 +1,31 @@
-# Item.gd - A script for any item in the game.
+# Item.gd - A script for a single item in the game.
+extends Control
 
 enum TYPE {WEAPON, ARMOR, CONSUMABLE, QUEST_ITEM}
 
-class Item:
-	var id: int
-	var name: String
-	var type: TYPE
-	var quantity: int
-	var price: int
+var id: int
+var type: TYPE
+var price: int
 
-	func increase_quantity(amount: int):
-		quantity += amount
+# Called after instancing to initialize an instance with data
+func init(id: int, name: String, type: TYPE, price: int):
+	self.id = id
+	self.name = name
+	self.type = type
+	self.price = price
+	
+	return self
 
-	func decrease_quantity(amount: int):
-		if quantity >= amount:
-			quantity -= amount
-			print("Quantity of item " + name + " decreased by " + str(amount))
-		else:
-			print("Not enough quantity.")
+# Returns the type of item as a string
+func get_type() -> String:
+	var type_string
+	match self.type:
+		TYPE.WEAPON:
+			type_string = "Weapon"
+		TYPE.ARMOR:
+			type_string = "Armor"
+		TYPE.CONSUMABLE:
+			type_string = "Consumable"
+		TYPE.QUEST_ITEM:
+			type_string = "Quest Item"
+	return type_string
