@@ -1,5 +1,5 @@
 # Quest.gd - A script for managing a single quest.
-extends Control
+extends Node
 enum TYPE {MAIN, SIDE, REOCCURENT}
 
 var id: int # Used to identify the quest.
@@ -10,7 +10,7 @@ var objectives: Array # Requirements that must be fulfilled to complete the ques
 var rewards: Array # Stores a list of Item objects.
 var completed: bool = false
 
-func init(id: int, name: String, type: TYPE, description: String, pre_requisites: Array, objectives: Array, rewards: Array):
+func init(id: int, name: String, type: TYPE, description: String, pre_requisites: Array, objectives: Array, rewards: Array) -> Node:
 	self.id = id
 	self.name = name
 	self.type = type
@@ -21,10 +21,10 @@ func init(id: int, name: String, type: TYPE, description: String, pre_requisites
 	
 	return self
 
-func is_completed():
+func is_completed() -> bool:
 	return completed
 
-func is_available():
+func is_available() -> bool:
 	return pre_requisites.all(is_completed)
 
 func complete():
@@ -34,7 +34,7 @@ func complete():
 	for reward in rewards:
 		pass
 
-func is_objective_completed(objective):
+func is_objective_completed(objective) -> bool:
 	return objective.completed
 
 func complete_objective(objective_index: int):
@@ -43,7 +43,7 @@ func complete_objective(objective_index: int):
 	if self.objectives.all(is_objective_completed):
 		complete()
 
-func get_type():
+func get_type() -> String:
 	var type_string
 	match self.type:
 		TYPE.MAIN:
