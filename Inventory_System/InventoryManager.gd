@@ -8,7 +8,6 @@ var capacity = 0
 
 func init(capacity: int) -> Node:
 	self.capacity = capacity
-	
 	return self
 
 # Check if an item is in the inventory
