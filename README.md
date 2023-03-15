@@ -1,8 +1,30 @@
-# Godot Scripts
-ready godot systems!
+# Godot 4.0 Systems
+17+ Planned Systems!
 
-# TODO
-- 2D Settings system
+The idea behind this repo is to make ready to use systems that you can add to your projects
+quickly and easily, the systems are common mechanics in games such as player inventory management.
+
+## Available Systems
+- Currently none is fully available.
+
+## Planned Systems
+- Inventory System
+	- Single Size Slot
+	- Various Sizes Slot
+- Quest System
+	- Main Story
+	- Side Quests
+	- Reocurrent Quests
+	- Time-based Quests
+	- Location-based Quests
+- Save System
+	- Manual Save
+	- Autosave
+	- Single or Limited Saves
+	- Unlimited Saves
+- Scene Manager
+	- Transitions
+- 2D Settings System
 - Upgrade System: tree-based/single parent/single to many, graph-based/multiple parent/many to many
 - Milestones System: repetitive tasks
 - Input system: image mapping, audio/UI signals
