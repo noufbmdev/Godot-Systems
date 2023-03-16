@@ -8,7 +8,7 @@ func _ready():
 				button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 				button.size_flags_vertical = Control.SIZE_EXPAND_FILL
 				button.text = file.get_basename().split("_")[0]
-				button.connect("pressed", go_to.bind(file))
+				button.connect("pressed", go_to.bind(directory + "/" + file))
 				$GridContainer.add_child(button)
 
 func go_to(file):

@@ -1,10 +1,8 @@
 extends Node
 
-const AUTOSAVE: bool = true
-const AUTOSAVE_DURATION: int = 5 # Time between each autosave in seconds.
 # TODO: limited/unlimited saves
-const MAX_SAVE_NUMBER: int = 10
-const SAVE_DIRECTORY: String = "user://Save/"
+@export var MAX_SAVE_NUMBER: int = 10
+@export var SAVE_DIRECTORY: String = "user://Save/"
 
 var save_file: String = "save.dat" # Stores the name of the save file with its extension.
 var save_data: Dictionary = {"key": "value"}

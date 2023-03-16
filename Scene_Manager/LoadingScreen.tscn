@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqnccgbglmon1"]
+
+[ext_resource type="Script" path="res://Scene_Manager/LoadingScreen.gd" id="1_ywsxe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lsmsk"]
+font_size = 32
+
+[node name="LoadingScreen" type="Control"]
+z_index = 100
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ywsxe")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -215.0
+offset_top = -99.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Loading"
+label_settings = SubResource("LabelSettings_lsmsk")
+horizontal_alignment = 1
+vertical_alignment = 1
