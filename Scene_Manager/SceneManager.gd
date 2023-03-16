@@ -1,7 +1,5 @@
 extends Control
 
-# TODO: add audio mix?
-
 signal loading_finished
 
 @export var LOADING_SCREEN = preload("res://Scene_Manager/LoadingScreen.tscn")
@@ -15,6 +13,7 @@ func _ready():
 # An instance of the scene manager needs to be globally accessible,
 # In godot you can achieve that through autoload
 func change_scene_to_file(target: String, transition: String):
+	# Only animate if the transition exists, otherwise just change scenes
 	if $AnimationPlayer.has_animation(transition):
 		# Fade audio
 		if AUDIO_FADE_ENABLED:

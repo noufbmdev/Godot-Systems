@@ -1,3 +1,4 @@
+# LoadingScreen - This is just an example loading screen scene.
 extends Control
 
 @export var DURATION: int = 20
@@ -5,9 +6,6 @@ extends Control
 
 var count = 0
 var dots = 0
-
-func _ready():
-	set_process_unhandled_input(false)
 
 func _process(_delta):
 	if dots <= NUMBER_OF_DOTS:

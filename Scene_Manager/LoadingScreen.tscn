@@ -6,6 +6,7 @@
 font_size = 32
 
 [node name="LoadingScreen" type="Control"]
+process_mode = 3
 z_index = 100
 layout_mode = 3
 anchors_preset = 15
