@@ -1,7 +1,5 @@
-## Features
-You need to **autoload** SaveManager.tscn for it to work.
-Open **Save_Example.tscn** in Godot and test it out.
-- Select the save directory by setting `SAVE_DIRECTORY` in SaveManager.gd.
+> You need to **autoload** SaveManager.tscn for it to work.
+> Open **Save_Example.tscn** in Godot and test it out.
 
 ### Options
 `var AUTOSAVE_ENABLED: bool = false`
@@ -18,10 +16,3 @@ Open **Save_Example.tscn** in Godot and test it out.
 
 `var SAVE_DIRECTORY: String = "user://Save/"`
 - Path where save files will be stored and retrieved.
-
-### Single/Multiple Saves
-- Select the save mode by setting 
-### Manual Save
-### Autosave
-- Enable autosave by setting `AUTOSAVE_ENABLED` to true in SaveManager.tscn.
-- Define the time between each autosave by setting `AUTOSAVE_DURATION`.
