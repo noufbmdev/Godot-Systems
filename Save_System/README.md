@@ -10,7 +10,7 @@ Open **Save_Example.tscn** in Godot and test it out.
 ```var AUTOSAVE_DURATION: int = 5```
 - Duration between each autosave in seconds.
 
-```var MODE: int = 0`
+```var MODE: int = 0```
 - Save mode where 0 is single save and 1 is multiple saves.
 
 ```var MAX_SAVE_NUMBER: int = 1```
