@@ -1,24 +1,31 @@
-## Features
+## Notes
 You need to **autoload** SceneManager.tscn for it to work.
+
 Open **Scene_Example.tscn** in Godot and test it out.
 
-### Loading Screen
-- Enable loading in SceneManager.tscn by setting `LOADING_ENABLED` to true.
-- Select your loading screen by setting `LOADING_SCREEN` in SceneManager.tscn to an existing scene.
-- You must emit `loading_finished` signal in SceneManager.tscn to remove the loading screen.
+## Options
+```var LOADING_SCREEN = preload("res://Scene_Manager/LoadingScreen.tscn")```
+- Select loading screen, it must be an existing tscn file.
 
-### BGM Audio Fade
-- You can fade BGM in your game by setting `AUDIO_FADE_ENABLED` to true in SceneManager.tscn.
-- You can select BGM by setting `BACKGROUND_MUSIC` in SceneManager.tscn to an AudioStream.
+```var LOADING_ENABLED: bool = true```
+- Enable loading screen.
 
-### Transitions
+> You must emit `loading_finished` signal in SceneManager.tscn to remove the loading screen.
+
+```var BACKGROUND_MUSIC: AudioStream = AudioStream.new()```
+- Set background music.
+
+```var AUDIO_FADE_ENABLED: bool = true```
+- Enable fading of background music between scenes.
+
 ```SceneManager.change_scene_to_file(SCENE_PATH, TRANSITION_NAME)```
-The available transitions are:
-- Slide Up
-- Slide Right
-- Slide Down
-- Slide Left
-- Fade
+- Changes between scenes with transitioning.
+- The available transitions are:
+	- Slide Up
+	- Slide Right
+	- Slide Down
+	- Slide Left
+	- Fade
 
 ### Camera Zoom [INCOMPLETE]
 ### Notifications [INCOMPLETE]

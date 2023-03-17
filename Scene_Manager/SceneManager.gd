@@ -4,8 +4,8 @@ signal loading_finished
 
 @export var LOADING_SCREEN = preload("res://Scene_Manager/LoadingScreen.tscn")
 @export var LOADING_ENABLED: bool = true
-@export var AUDIO_FADE_ENABLED: bool = true
 @export var BACKGROUND_MUSIC: AudioStream = AudioStream.new()
+@export var AUDIO_FADE_ENABLED: bool = true
 
 func _ready():
 	LOADING_SCREEN = LOADING_SCREEN.instantiate()
