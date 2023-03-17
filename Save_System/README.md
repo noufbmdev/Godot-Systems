@@ -1,5 +1,6 @@
-> You need to **autoload** SaveManager.tscn for it to work.
-> Open **Save_Example.tscn** in Godot and test it out.
+You need to **autoload** SaveManager.tscn for it to work.
+
+Open **Save_Example.tscn** in Godot and test it out.
 
 ### Options
 `var AUTOSAVE_ENABLED: bool = false`
