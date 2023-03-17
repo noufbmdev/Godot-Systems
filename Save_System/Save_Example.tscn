@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ikobb")
 
-[node name="HSplitContainer" type="HSplitContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,42 +19,179 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SaveList" type="Panel" parent="HSplitContainer"]
+[node name="SaveList" type="Panel" parent="HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/SaveList"]
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/SaveList"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = -25.0
+offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 2
+horizontal_scroll_mode = 0
 
-[node name="Options" type="Panel" parent="HSplitContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/SaveList/ScrollContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/Options"]
+[node name="Panel" type="Panel" parent="HBoxContainer/SaveList/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/SaveList/ScrollContainer/VBoxContainer/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 5
+alignment = 1
 
-[node name="Mode" type="OptionButton" parent="HSplitContainer/Options/VBoxContainer"]
+[node name="Content" type="VBoxContainer" parent="HBoxContainer/SaveList/ScrollContainer/VBoxContainer/Panel/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
 
-[node name="MultiMode" type="OptionButton" parent="HSplitContainer/Options/VBoxContainer"]
+[node name="Area" type="Label" parent="HBoxContainer/SaveList/ScrollContainer/VBoxContainer/Panel/HBoxContainer/Content"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Area 1"
 
-[node name="MultiNum" type="TextEdit" parent="HSplitContainer/Options/VBoxContainer"]
+[node name="TimePlayed" type="Label" parent="HBoxContainer/SaveList/ScrollContainer/VBoxContainer/Panel/HBoxContainer/Content"]
 layout_mode = 2
+size_flags_vertical = 6
+text = "00:38"
 
-[node name="Autosave" type="CheckButton" parent="HSplitContainer/Options/VBoxContainer"]
+[node name="Progress" type="Label" parent="HBoxContainer/SaveList/ScrollContainer/VBoxContainer/Panel/HBoxContainer/Content"]
 layout_mode = 2
+size_flags_vertical = 6
+text = "1%"
 
-[node name="AutosaveTime" type="TextEdit" parent="HSplitContainer/Options/VBoxContainer"]
+[node name="Buttons" type="VBoxContainer" parent="HBoxContainer/SaveList/ScrollContainer/VBoxContainer/Panel/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
 
-[node name="Button" type="Button" parent="HSplitContainer/Options/VBoxContainer"]
+[node name="Button2" type="Button" parent="HBoxContainer/SaveList/ScrollContainer/VBoxContainer/Panel/HBoxContainer/Buttons"]
 layout_mode = 2
+size_flags_vertical = 3
+text = ">"
+
+[node name="Button" type="Button" parent="HBoxContainer/SaveList/ScrollContainer/VBoxContainer/Panel/HBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "x"
+
+[node name="Options" type="Panel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Options"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="SaveMode" type="OptionButton" parent="HBoxContainer/Options/VBoxContainer"]
+layout_mode = 2
+item_count = 2
+selected = 0
+popup/item_0/text = "Single Save"
+popup/item_0/id = 0
+popup/item_1/text = "Multiple Saves"
+popup/item_1/id = 1
+
+[node name="LimitMode" type="OptionButton" parent="HBoxContainer/Options/VBoxContainer"]
+layout_mode = 2
+disabled = true
+item_count = 2
+selected = 0
+popup/item_0/text = "Limited"
+popup/item_0/id = 0
+popup/item_1/text = "Unlimited"
+popup/item_1/id = 1
+
+[node name="SaveNum" type="SpinBox" parent="HBoxContainer/Options/VBoxContainer"]
+layout_mode = 2
+min_value = 1.0
+value = 1.0
+allow_greater = true
+editable = false
+suffix = "Save(s)"
+
+[node name="Autosave" type="CheckButton" parent="HBoxContainer/Options/VBoxContainer"]
+layout_mode = 2
+text = "Autosave"
+
+[node name="AutosaveTime" type="SpinBox" parent="HBoxContainer/Options/VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+min_value = 5.0
+value = 5.0
+allow_greater = true
+editable = false
+suffix = "Second(s)"
+
+[node name="Button" type="Button" parent="HBoxContainer/Options/VBoxContainer"]
+layout_mode = 2
+text = "Apply"
+
+[node name="TempSaveSlot" type="Panel" parent="HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/TempSaveSlot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/TempSaveSlot/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Empty Slot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer/TempSaveSlot/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+text = ">"
+
+[connection signal="item_selected" from="HBoxContainer/Options/VBoxContainer/SaveMode" to="." method="_on_mode_item_selected"]
+[connection signal="item_selected" from="HBoxContainer/Options/VBoxContainer/LimitMode" to="." method="_on_limit_mode_item_selected"]
+[connection signal="toggled" from="HBoxContainer/Options/VBoxContainer/Autosave" to="." method="_on_autosave_toggled"]
+[connection signal="pressed" from="HBoxContainer/Options/VBoxContainer/Button" to="." method="_on_button_pressed"]

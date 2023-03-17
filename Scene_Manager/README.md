@@ -12,10 +12,13 @@ Open **Scene_Example.tscn** in Godot and test it out.
 - You can select BGM by setting `BACKGROUND_MUSIC` in SceneManager.tscn to an AudioStream.
 
 ### Transitions
-`SceneManager.change_scene_to_file(SCENE_PATH, TRANSITION_NAME)`
+```SceneManager.change_scene_to_file(SCENE_PATH, TRANSITION_NAME)```
 The available transitions are:
 - Slide Up
 - Slide Right
 - Slide Down
 - Slide Left
 - Fade
+
+### Camera Zoom [INCOMPLETE]
+### Notifications [INCOMPLETE]

@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5bej3gakh2fm"]
-
-[ext_resource type="Script" path="res://Save_System/Autosave.gd" id="1_2alwh"]
-
-[node name="Autosave" type="Timer"]
-script = ExtResource("1_2alwh")
-
-[connection signal="timeout" from="." to="." method="_on_timeout"]
