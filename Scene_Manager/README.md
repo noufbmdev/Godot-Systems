@@ -32,3 +32,4 @@ Open **Scene_Example.tscn** in Godot and test it out.
 
 ### Camera Zoom [INCOMPLETE]
 ### Notifications [INCOMPLETE]
+### Pausing [INCOMPLETE]

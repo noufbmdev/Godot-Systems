@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvtylhcsowwry"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://Save_System/Save_Example.gd" id="1_ikobb"]
+[ext_resource type="Script" path="res://Save_Manager/Save_Example.gd" id="1_ikobb"]
 
 [node name="Save_Example" type="Control"]
 layout_mode = 3

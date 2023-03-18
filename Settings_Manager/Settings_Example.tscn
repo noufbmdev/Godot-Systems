@@ -1,0 +1,148 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn62ti7pqst2y"]
+
+[ext_resource type="Script" path="res://Settings_Manager/Settings_Example.gd" id="1_tyyp4"]
+
+[node name="Settings_Example" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tyyp4")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = -25.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="HBoxContainer" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Settings"
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+text = "x"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Audio" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Header" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/VBoxContainer/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Audio
+"
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/VBoxContainer/Header"]
+layout_mode = 2
+
+[node name="Master" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/VBoxContainer/Master"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Master"
+
+[node name="HSlider" type="HSlider" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/VBoxContainer/Master"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BGM" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/VBoxContainer/BGM"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "BGM"
+
+[node name="HSlider" type="HSlider" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/VBoxContainer/BGM"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SFX" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/VBoxContainer/SFX"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SFX"
+
+[node name="HSlider" type="HSlider" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/VBoxContainer/SFX"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Screen" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Screen"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Screen/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Screen
+"
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Screen/VBoxContainer"]
+layout_mode = 2
+
+[node name="Graphics" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Graphics"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Graphics/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Graphics"
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Graphics/VBoxContainer"]
+layout_mode = 2

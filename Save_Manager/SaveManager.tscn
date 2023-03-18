@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2yvum5a4k5ke"]
+
+[ext_resource type="Script" path="res://Save_Manager/SaveManager.gd" id="1_xy4i2"]
+
+[node name="SaveManager" type="Node"]
+script = ExtResource("1_xy4i2")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

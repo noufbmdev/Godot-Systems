@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfotrw7yhhf0a"]
+
+[ext_resource type="Script" path="res://Settings_Manager/SettingsManager.gd" id="1_btyul"]
+
+[node name="SettingsManager" type="Node"]
+script = ExtResource("1_btyul")
