@@ -1,5 +1,5 @@
 # Godot 4.0 Systems
-4 Available Systems and 13 Planned Systems!
+2 Available Systems and 16 Planned Systems!
 
 The idea behind this repo is to make ready to use systems that you can add to your projects
 quickly and easily, the systems are common mechanics in games such as player inventory management.

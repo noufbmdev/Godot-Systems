@@ -16,6 +16,7 @@ config/features=PackedStringArray("4.0", "Forward Plus")
 
 [autoload]
 
+SettingsManager="*res://Settings_Manager/SettingsManager.tscn"
 SceneManager="*res://Scene_Manager/SceneManager.tscn"
 SaveManager="*res://Save_Manager/SaveManager.tscn"
 Globals="*res://Globals.tscn"
