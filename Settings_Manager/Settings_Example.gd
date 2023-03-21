@@ -1,9 +1,19 @@
 extends Control
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+@onready var settings = SettingsManager.get_settings()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _ready():
+	# Update user interface
+	
+	# Load languages
+	pass
+
+func _on_reset_button_pressed():
+	SettingsManager.set_settings(SettingsManager.DEFAULT)
+
+func _on_apply_button_pressed():
+	# Prepare settings
+	
+	# Save settings
+	# Apply settings in runtime
 	pass

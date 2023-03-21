@@ -17,7 +17,7 @@ const DEFAULT = {
 		},
 	},
 	"window": {
-		"resolution": "1440x900",
+		"resolution": "1024x768",
 		"mode": 0,
 	},
 	"language": "en",

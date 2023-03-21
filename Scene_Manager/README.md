@@ -31,5 +31,5 @@ Open **Scene_Example.tscn** in Godot and test it out.
 - Enable fading of background music between scenes.
 
 ### Camera Zoom [INCOMPLETE]
-### Notifications [INCOMPLETE]
+### Scene Teleport [INCOMPLETE]
 ### Pausing [INCOMPLETE]

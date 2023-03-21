@@ -16,6 +16,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = -100.0
+offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -30,6 +34,7 @@ offset_right = -25.0
 offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 40
 
 [node name="Header" type="HBoxContainer" parent="Panel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
@@ -56,93 +61,169 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 20
 
-[node name="Audio" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="General" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio"]
+[node name="Header" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/General"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/General/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "General"
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/General/Header"]
+layout_mode = 2
+
+[node name="Language" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/General"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/General/Language"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Language"
+
+[node name="OptionButton" type="OptionButton" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/General/Language"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Audio" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 
-[node name="Header" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/VBoxContainer"]
+[node name="Header" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/VBoxContainer/Header"]
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/Header"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Audio
 "
 
-[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/VBoxContainer/Header"]
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/Header"]
 layout_mode = 2
 
-[node name="Master" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/VBoxContainer"]
+[node name="Master" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/VBoxContainer/Master"]
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/Master"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Master"
 
-[node name="HSlider" type="HSlider" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/VBoxContainer/Master"]
+[node name="HSlider" type="HSlider" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/Master"]
 layout_mode = 2
 size_flags_horizontal = 3
+min_value = -20.0
+max_value = 0.0
 
-[node name="BGM" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/VBoxContainer"]
+[node name="BGM" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/VBoxContainer/BGM"]
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/BGM"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "BGM"
 
-[node name="HSlider" type="HSlider" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/VBoxContainer/BGM"]
+[node name="HSlider" type="HSlider" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/BGM"]
 layout_mode = 2
 size_flags_horizontal = 3
+min_value = -20.0
+max_value = 0.0
 
-[node name="SFX" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/VBoxContainer"]
+[node name="SFX" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/VBoxContainer/SFX"]
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/SFX"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "SFX"
 
-[node name="HSlider" type="HSlider" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/VBoxContainer/SFX"]
+[node name="HSlider" type="HSlider" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Audio/SFX"]
 layout_mode = 2
 size_flags_horizontal = 3
+min_value = -20.0
+max_value = 0.0
 
-[node name="Screen" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Screen"]
+[node name="Window" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 20
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Screen/VBoxContainer"]
+[node name="Header" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Window"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Window/Header"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Screen
-"
+text = "Window"
 
-[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Screen/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Window/Header"]
 layout_mode = 2
 
-[node name="Graphics" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Resolution" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Window"]
 layout_mode = 2
-size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Graphics"]
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Window/Resolution"]
 layout_mode = 2
 size_flags_horizontal = 3
+text = "Resolution"
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Graphics/VBoxContainer"]
+[node name="OptionButton" type="OptionButton" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Window/Resolution"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Graphics"
+item_count = 6
+selected = 2
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+popup/item_1/text = "1440x900"
+popup/item_1/id = 1
+popup/item_2/text = "1024x768"
+popup/item_2/id = 2
+popup/item_3/text = "800x600"
+popup/item_3/id = 3
+popup/item_4/text = "640x480"
+popup/item_4/id = 4
+popup/item_5/text = "1280x800"
+popup/item_5/id = 5
 
-[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Graphics/VBoxContainer"]
+[node name="Mode" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Window"]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Window/Mode"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mode"
+
+[node name="OptionButton" type="OptionButton" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Window/Mode"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 3
+selected = 0
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Fullscreen"
+popup/item_1/id = 1
+popup/item_2/text = "Borderless"
+popup/item_2/id = 2
+
+[node name="Buttons" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ResetButton" type="Button" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Reset"
+
+[node name="ApplyButton" type="Button" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Apply"
+
+[connection signal="pressed" from="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Buttons/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Buttons/ApplyButton" to="." method="_on_apply_button_pressed"]
