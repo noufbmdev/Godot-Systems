@@ -6,44 +6,56 @@ extends Node
 @export var MAX_SAVE_NUMBER: int = 1
 @export var SAVE_DIRECTORY: String = "user://Save/"
 
-var save_file: String = "save.dat" # Stores the name of the save file with its extension.
-var save_data: Dictionary = {"key": "value"}
+var save_data: Dictionary = {"name": "save"}
 
 func _ready():
+	# Create the save directory if it doesn't already exist
 	if not DirAccess.open(SAVE_DIRECTORY):
 		DirAccess.make_dir_absolute(SAVE_DIRECTORY)
-	autosave()
+	# Create autosave timer if autosave is enabled
+	if AUTOSAVE_ENABLED:
+		print("Autosave is enabled.")
+		$Timer.connect("timeout", autosave)
+		$Timer.start(AUTOSAVE_DURATION)
 
-func set_save_file(file_name_with_extension: String):
-	save_file = file_name_with_extension
+func get_file_path(save_name: String) -> String:
+	return SAVE_DIRECTORY + save_name + ".dat"
 
-func get_save_file() -> String:
-	return save_file
-
+# Load a save file's contents by its name
+func set_save_data(file_name: String):
+	save_data = read(file_name)
+	if save_data.has("current_scene"):
+		SceneManager.change_scene_to_file(save_data.current_scene.scene_path, "Fade")
+	else:
+		print("There is no scene in the save file.")
+	
+# Save the current save
 func write():
-	var file = FileAccess.open(SAVE_DIRECTORY + save_file, FileAccess.WRITE)
+	# Preparing save data
+	save_data.current_scene = await SceneManager.save()
+	# Record save data in a file
+	var file = FileAccess.open(get_file_path(save_data.name), FileAccess.WRITE)
 	file.store_string(JSON.stringify(save_data))
 
-func read() -> String:
-	var file = FileAccess.open(SAVE_DIRECTORY + save_file, FileAccess.READ)
-	return file.get_as_text()
+# Get the contents of a save file by its name
+func read(file_name) -> Dictionary:
+	var file = FileAccess.open(get_file_path(file_name), FileAccess.READ)
+	return JSON.parse_string(file.get_as_text())
 
-func delete():
+# Delete a file by its name
+func delete(file_name):
 	var dir = DirAccess.open(SAVE_DIRECTORY)
-	return dir.remove(SAVE_DIRECTORY + save_file)
+	return dir.remove(get_file_path(file_name))
 
+# Get all save files in SAVE_DIRECTORY
 func get_files() -> PackedStringArray:
 	var dir = DirAccess.open(SAVE_DIRECTORY)
 	return dir.get_files()
 
 func autosave():
 	if AUTOSAVE_ENABLED:
-		print("Autosave is enabled.")
-		$Timer.start(AUTOSAVE_DURATION)
+		print("Autosaved " + get_file_path(save_data.name) + " file.")
+		write()
 	else:
 		print("Autosave is disabled.")
 		$Timer.stop()
-
-func _on_timer_timeout():
-	print("Autosave " + SaveManager.get_save_file())
-	SaveManager.write()

@@ -4,7 +4,6 @@
 
 [node name="SaveManager" type="Node"]
 script = ExtResource("1_xy4i2")
+AUTOSAVE_ENABLED = true
 
 [node name="Timer" type="Timer" parent="."]
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

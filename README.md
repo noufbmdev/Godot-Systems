@@ -24,3 +24,4 @@ quickly and easily, the systems are common mechanics in games such as player inv
 13. Consumables system: temp/perma effect
 14. Teleportation system
 15. Dialog system: typewritter effect, key press audio, chiptune audio
+16. Building System

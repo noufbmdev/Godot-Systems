@@ -8,5 +8,6 @@ func start_scene_example_timer():
 	add_child(timer)
 	timer.start(5)
 	await timer.timeout
+	print("Loading finished.")
 	SceneManager.emit_signal("loading_finished")
 	timer.queue_free()

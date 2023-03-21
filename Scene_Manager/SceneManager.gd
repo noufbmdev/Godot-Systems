@@ -46,3 +46,33 @@ func change_scene_to_file(target: String, transition: String):
 # Returns a list of transition animations
 func get_transition_list() -> Array:
 	return $AnimationPlayer.get_animation_list()
+
+func save():
+	var data = {
+		"scene_path": null,
+		"screenshot_path": null
+	}
+	
+	# Save a screenshot of the current scene
+	await RenderingServer.frame_post_draw
+	var screenshot_path = SaveManager.SAVE_DIRECTORY + SaveManager.save_data.name + ".png"
+	var result = get_viewport().get_texture().get_image().save_png(screenshot_path)
+	if result == OK:
+		data.screenshot_path = screenshot_path
+	else:
+		print("Error while saving screenshot.")
+	
+	# Pack and save current scene
+	var packed_scene = PackedScene.new()
+	result = packed_scene.pack(get_tree().get_current_scene())
+	if result == OK:
+		var scene_path = SaveManager.SAVE_DIRECTORY + SaveManager.save_data.name + ".tscn"
+		result = ResourceSaver.save(packed_scene, scene_path)
+		if result == OK:
+			data.scene_path = scene_path
+		else:
+			print("Error while saving current scene as a resource.")
+	else:
+		print("Error while packing current scene.")
+	
+	return data
