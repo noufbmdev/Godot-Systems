@@ -1,19 +1,18 @@
+## Planned Features
+- Camera Zoom
+- Pause Screen
+- Scene Teleport
+
 ## Guide
 1. Autoload SceneManager.tscn: Project > Project Settings > Autoload
 2. Call functions on SceneManager
 
 > Open the example scene in this folder to test it out.
 
-## Planned Features
-- Camera Zoom
-- Pause Screen
-- Scene Teleport
-
 ### Options
 - `LOADING_ENABLED` : bool - Enable loading screen.
 - `LOADING_SCREEN`: PackedScene - Select loading screen, it must be an existing tscn file.
-```SceneManager.emit_signal("loading_finished")```
-You must emit `loading_finished` signal to remove the loading screen.
+	- ```SceneManager.emit_signal("loading_finished")``` You must emit `loading_finished` signal to remove the loading screen.
 - `AUDIO_FADE_ENABLED`: bool - Enable fading of background music between scenes.
 - `BACKGROUND_MUSIC` : AudioStream - Sets the background music for the game.
 
