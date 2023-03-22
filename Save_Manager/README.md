@@ -1,8 +1,3 @@
-## Planned Features
-- Camera Zoom
-- Pause Screen
-- Scene Teleport
-
 ## Guide
 1. Autoload SaveManager.tscn: Project > Project Settings > Autoload
 2. Call functions on SaveManager: ```SaveManager.function()```
