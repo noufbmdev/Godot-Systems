@@ -4,6 +4,10 @@
 - Scene Teleport
 
 ## Guide
+
+An instance of the scene manager needs to be globally accessible,
+In godot you can achieve that through autoload.
+
 1. Autoload SceneManager.tscn: Project > Project Settings > Autoload
 2. Call functions on SceneManager: ```SceneManager.function()```
 

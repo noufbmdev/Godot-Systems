@@ -10,8 +10,7 @@ signal loading_finished
 func _ready():
 	LOADING_SCREEN = LOADING_SCREEN.instantiate()
 
-# An instance of the scene manager needs to be globally accessible,
-# In godot you can achieve that through autoload
+# Changes scenes with transitioning.
 func change_scene_to_file(target: String, transition: String) -> void:
 	# Only animate if the transition exists, otherwise just change scenes
 	if $AnimationPlayer.has_animation(transition):
@@ -43,10 +42,12 @@ func change_scene_to_file(target: String, transition: String) -> void:
 	else:
 		get_tree().change_scene_to_file(target)
 
-# Returns a list of transition animations
+# Returns a list of available transition animations as an Array.
 func get_transition_list() -> Array:
 	return $AnimationPlayer.get_animation_list()
 
+# Packs the current scene and takes a screenshot of the scene.
+# Returns the packed scene path and screenshot path as a Dictionary.
 func save() -> Dictionary:
 	var data = {
 		"scene_path": null,
