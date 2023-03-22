@@ -1,23 +1,44 @@
-## Notes
-You need to **autoload** SaveManager.tscn for it to work.
+## Planned Features
+- Camera Zoom
+- Pause Screen
+- Scene Teleport
 
-Open **Save_Example.tscn** in Godot and test it out.
+## Guide
+1. Autoload SaveManager.tscn: Project > Project Settings > Autoload
+2. Call functions on SaveManager: ```SaveManager.function()```
 
-## Options
+> Open the example scene in this folder to test it out.
 
-```var SAVE_DIRECTORY: String = "user://Save/"```
-- Path where save files will be stored and retrieved.
+### Options
+- `AUTOSAVE_ENABLED: bool` - Enable autosave.
+- `AUTOSAVE_DURATION: int` - Time between each autosave in seconds.
+- `MODE: int` - Save mode where 0 is single save and 1 is multiple saves.
+- `MAX_SAVE_NUMBER: int` - Maximum number of save files.
+- `SAVE_DIRECTORY: String` - Path where save files will be managed.
 
-### Manual Save
-```var MODE: int = 0```
-- Save mode where 0 is single save and 1 is multiple saves.
+### Methods
+```get_file_path(save_name: String) -> String```
+- Returns a save file's path by its name.
+- save_name: String - Name of the save.
 
-```var MAX_SAVE_NUMBER: int = 1```
-- Maximum number of save files.
+```set_save_data(save_name: String) -> void```
+- Loads a save file's contents by its name into the game.
+- save_name: String - Name of the save.
 
-### Autosave
-```var AUTOSAVE_ENABLED: bool = false```
-- Enable autosave.
+```write() -> void```
+- Prepares data and saves it in the currently selected save file.
 
-```var AUTOSAVE_DURATION: int = 5```
-- Duration between each autosave in seconds.
+```read(save_name) -> Dictionary```
+- Returns the contents of a save file by its name as a Dictionary.
+- save_name: String - Name of the save.
+
+```delete(save_name) -> void```
+- Delete a file by its name in SAVE_DIRECTORY.
+- save_name: String - Name of the save.
+
+```get_files() -> PackedStringArray```
+- Returns all save files in SAVE_DIRECTORY as a PackedStringArray.
+
+```autosave() -> void```
+- Gets called everytime the autosave timer has timed out.
+- Saves currently selected save file.

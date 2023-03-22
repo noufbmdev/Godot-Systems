@@ -18,41 +18,44 @@ func _ready():
 		$Timer.connect("timeout", autosave)
 		$Timer.start(AUTOSAVE_DURATION)
 
+# Returns a save file's path by its name.
 func get_file_path(save_name: String) -> String:
 	return SAVE_DIRECTORY + save_name + ".dat"
 
-# Load a save file's contents by its name
-func set_save_data(file_name: String):
-	save_data = read(file_name)
+# Loads a save file's contents by its name into the game.
+func set_save_data(save_name: String) -> void:
+	save_data = read(save_name)
 	if save_data.has("current_scene"):
 		SceneManager.change_scene_to_file(save_data.current_scene.scene_path, "Fade")
 	else:
 		print("There is no scene in the save file.")
 	
-# Save the current save
-func write():
-	# Preparing save data
+# Prepares data and saves it in the currently selected save file.
+func write() -> void:
+	# Preparing data
 	save_data.current_scene = await SceneManager.save()
-	# Record save data in a file
+	# Record data in the file
 	var file = FileAccess.open(get_file_path(save_data.name), FileAccess.WRITE)
 	file.store_string(JSON.stringify(save_data))
 
-# Get the contents of a save file by its name
-func read(file_name) -> Dictionary:
-	var file = FileAccess.open(get_file_path(file_name), FileAccess.READ)
+# Returns the contents of a save file by its name as a Dictionary.
+func read(save_name) -> Dictionary:
+	var file = FileAccess.open(get_file_path(save_name), FileAccess.READ)
 	return JSON.parse_string(file.get_as_text())
 
-# Delete a file by its name
-func delete(file_name):
+# Delete a file by its name.
+func delete(save_name) -> void:
 	var dir = DirAccess.open(SAVE_DIRECTORY)
-	return dir.remove(get_file_path(file_name))
+	return dir.remove(get_file_path(save_name))
 
-# Get all save files in SAVE_DIRECTORY
+# Returns all save files in SAVE_DIRECTORY as a PackedStringArray.
 func get_files() -> PackedStringArray:
 	var dir = DirAccess.open(SAVE_DIRECTORY)
 	return dir.get_files()
 
-func autosave():
+# Gets called everytime the autosave timer has timed out.
+# Saves currently selected save file.
+func autosave() -> void:
 	if AUTOSAVE_ENABLED:
 		print("Autosaved " + get_file_path(save_data.name) + " file.")
 		write()
