@@ -28,8 +28,9 @@ func _ready():
 	if not FileAccess.open(PATH, FileAccess.READ):
 		print("New settings file created.")
 		set_settings(DEFAULT)
-	# On ready, apply settings
+	# On ready, set and apply settings
 	var settings = get_settings()
+	set_settings(settings)
 	apply_settings(settings)
 
 # Write and apply settings
@@ -37,8 +38,6 @@ func set_settings(settings: Dictionary):
 	var file = FileAccess.open(PATH, FileAccess.WRITE)
 	file.store_string(JSON.stringify(settings))
 	file.close()
-	# Apply settings in runtime
-	apply_settings(settings)
 
 # Read settings file
 func get_settings() -> Dictionary:
