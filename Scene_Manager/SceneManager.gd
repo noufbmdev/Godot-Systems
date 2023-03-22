@@ -2,17 +2,17 @@ extends Control
 
 signal loading_finished
 
-@export var LOADING_SCREEN = preload("res://Scene_Manager/LoadingScreen.tscn")
 @export var LOADING_ENABLED: bool = true
-@export var BACKGROUND_MUSIC: AudioStream = AudioStream.new()
+@export var LOADING_SCREEN = preload("res://Scene_Manager/LoadingScreen.tscn")
 @export var AUDIO_FADE_ENABLED: bool = true
+@export var BACKGROUND_MUSIC: AudioStream = AudioStream.new()
 
 func _ready():
 	LOADING_SCREEN = LOADING_SCREEN.instantiate()
 
 # An instance of the scene manager needs to be globally accessible,
 # In godot you can achieve that through autoload
-func change_scene_to_file(target: String, transition: String):
+func change_scene_to_file(target: String, transition: String) -> void:
 	# Only animate if the transition exists, otherwise just change scenes
 	if $AnimationPlayer.has_animation(transition):
 		# Fade audio
@@ -47,7 +47,7 @@ func change_scene_to_file(target: String, transition: String):
 func get_transition_list() -> Array:
 	return $AnimationPlayer.get_animation_list()
 
-func save():
+func save() -> Dictionary:
 	var data = {
 		"scene_path": null,
 		"screenshot_path": null
