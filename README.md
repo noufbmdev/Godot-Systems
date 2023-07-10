@@ -19,3 +19,4 @@ currently there are 2 available systems and a few planned systems!
 9. Building System: Procedural world/level generation, manual building.
 10. Crafting System: Recipe-based, mix and match.
 11. Dialog System: Typewritter effect, key press audio, chiptune audio.
+12. Bug Reporting System: Integration with Jira and Bugzilla.
