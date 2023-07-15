@@ -7,6 +7,8 @@ you will have to adjust the code a bit.
 > ℹ️ Try it out!
 > Open and run **Dialog_Example.tscn** in Godot engine.
 
+Sound Effects by <a href="https://pixabay.com/users/universfield-28281460/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=147349">UNIVERSFIELD</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=147349">Pixabay</a>
+
 ## Features
 - Dialog Tags ![INCOMPLETE](https://img.shields.io/badge/Incomplete-orange)
 <br/>This system uses Godot engine's RichTextLabel node to display dialog text, RichTextLabel allows for
