@@ -8,27 +8,27 @@ you will have to adjust the code a bit.
 > Open and run **Dialog_Example.tscn** in Godot engine.
 
 ## Features
-- Dialog Tags ==[INCOMPLETE]==
+- Dialog Tags `[INCOMPLETE]`
 This system uses Godot engine's RichTextLabel node to display dialog text, RichTextLabel allows for
 complex formatting using [BBCodes](https://docs.godotengine.org/en/stable/tutorials/ui/bbcode_in_richtextlabel.html).
 However, I will be extending that to add more tags and text effects as defined in the documentation section.
-- Dialog Box Customization ==[INCOMPLETE]==
+- Dialog Box Customization `[INCOMPLETE]`
 	- The ability to change almost everything about the dialog box (colors, textures, layout...).
 	- The ability to set and use a single theme or varying themes based on the speaking character.
-- Dialog Characters ==[INCOMPLETE]==
+- Dialog Characters `[INCOMPLETE]`
 	- Define the characters within the game with their name, portraits, theme, sound, etc.
 	- Show character name from the first time or wait until it is revealed to the player.
-- Dialog Emotion ==[INCOMPLETE]==
+- Dialog Emotion `[INCOMPLETE]`
 	- You can set an unlimited number of emotions for the characters.
 	- Attach a portrait of each character for each emotion.
-- Dialog Sounds ==[INCOMPLETE]==
+- Dialog Sounds `[INCOMPLETE]`
 	- Enable and define Blip sounds for each character.
 	- Enable and define audio for each piece of dialog text.
-- Dialog Prompts ==[INCOMPLETE]==
+- Dialog Prompts `[INCOMPLETE]`
 	- Next Page Prompt
 	- TextField Prompt
 	- Options Prompt
-- QoL Features ==[INCOMPLETE]==
+- QoL Features `[INCOMPLETE]`
 	- Skip the whole dialog.
 	- Automatically go to the next piece of dialog.
 
