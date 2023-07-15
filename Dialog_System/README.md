@@ -11,7 +11,7 @@ you will have to adjust the code a bit.
 - Dialog Tags ![INCOMPLETE](https://img.shields.io/badge/Incomplete-orange)
 <br/>This system uses Godot engine's RichTextLabel node to display dialog text, RichTextLabel allows for
 complex formatting using [BBCodes](https://docs.godotengine.org/en/stable/tutorials/ui/bbcode_in_richtextlabel.html).
-However, I will be extending that to add more tags and text effects as defined in the documentation section.
+I will be extending that to add more tags and text effects as defined in the documentation [section](#tags).
 - Dialog Box Customization ![INCOMPLETE](https://img.shields.io/badge/Incomplete-orange)
 	- The ability to change almost everything about the dialog box (colors, textures, layout...).
 	- The ability to set and use a single theme or varying themes based on the speaking character.
@@ -33,18 +33,17 @@ However, I will be extending that to add more tags and text effects as defined i
 	- Automatically go to the next piece of dialog.
 
 ## Setup
-1. Add the system to your project.
-<br/>You have 3 ways to do this, choose the one that fits your project:
-	1. Autoload the DialogManager scene and call fucntions on it from any script. (Singleton Method)
-	2. Add it as a node inside a scene and call functions on it from the scene's script. (Limited)
-	3. Create an instance of it from a script and add it to the current scene then call functions on it. (Limited)
+1. Add it to your project, you have 3 ways to do this.
+	1. Autoload the DialogManager scene and call fucntions on it from any script. **(Singleton Method)**
+	2. Add it as a node inside a scene and call functions on it from the scene's script. **(Limited)**
+	3. Create an instance of it from a script and add it to the current scene then call functions on it. **(Limited)**
 2. Configure the system's behavior.
 	- Inside DialogManager.gd, enable or disable things like skipping dialog, automatically going
 	to the next dialog text.
 	- If you want to allow the player to change certain system behavior then you can use the functions
 	defined below by connecting them to your settings page but this will only work using the Singleton method.
 	Otherwise, you will have to save the player's settings and pass them to the DialogManager instance or node
-	through a script.
+	through a script which is not currently supported.
 3. Set the default theme.
 <br/>You can do that in the DefaultDialog.tscn, both in Godot engine editor and inside the script
 attached to the scene.
@@ -66,14 +65,34 @@ portrait for each emotion. In the case that you are developing a 3D game and don
 portraits, you have to catch that signal and handle it.
 ### Nodes
 - Required Nodes
-	- Dialog Box
-	- Dialog Text
+	- DialogManager
+	- DialogBox
+	- DialogText
 - Optional Nodes
-	- Next Prompt
-	- Speaker Name
-	- Speaker Portrait
-	- TextField Prompt
-	- Options Prompt
-### Signals
-### Variables
-### Methods
+	- NextPrompt
+	- SpeakerName
+	- SpeakerPortrait
+	- TextFieldPrompt
+	- OptionsPrompt
+### Dialog Manager
+- Signals
+	- emote
+	- action
+- Variables
+	- dialog_box: DialogBox
+	- dialog_text: DialogText
+	- next_prompt: NextPrompt
+	- speaker_name: SpeakerName
+	- speaker_portrait: SpeakerPortrait
+	- emotions: Enum
+	- characters: Dictionary
+	- speed: int
+- Methods
+	- setget: speed
+### Dialog Box
+- Signals
+	None
+- Variables
+	None
+- Methods
+	- void set_panel()
