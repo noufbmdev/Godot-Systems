@@ -8,33 +8,33 @@ you will have to adjust the code a bit.
 > Open and run **Dialog_Example.tscn** in Godot engine.
 
 ## Features
-- Dialog Tags ==[INCOMPLETE]==
-This system uses Godot engine's RichTextLabel node to display dialog text, RichTextLabel allows for
+- Dialog Tags ![INCOMPLETE](https://img.shields.io/badge/Incomplete-orange)
+<br/>This system uses Godot engine's RichTextLabel node to display dialog text, RichTextLabel allows for
 complex formatting using [BBCodes](https://docs.godotengine.org/en/stable/tutorials/ui/bbcode_in_richtextlabel.html).
 However, I will be extending that to add more tags and text effects as defined in the documentation section.
 - Dialog Box Customization ![INCOMPLETE](https://img.shields.io/badge/Incomplete-orange)
 	- The ability to change almost everything about the dialog box (colors, textures, layout...).
 	- The ability to set and use a single theme or varying themes based on the speaking character.
-- Dialog Characters ==[INCOMPLETE]==
+- Dialog Characters ![INCOMPLETE](https://img.shields.io/badge/Incomplete-orange)
 	- Define the characters within the game with their name, portraits, theme, sound, etc.
 	- Show character name from the first time or wait until it is revealed to the player.
-- Dialog Emotion ==[INCOMPLETE]==
+- Dialog Emotion ![INCOMPLETE](https://img.shields.io/badge/Incomplete-orange)
 	- You can set an unlimited number of emotions for the characters.
 	- Attach a portrait of each character for each emotion.
-- Dialog Sounds ==[INCOMPLETE]==
+- Dialog Sounds ![INCOMPLETE](https://img.shields.io/badge/Incomplete-orange)
 	- Enable and define Blip sounds for each character.
 	- Enable and define audio for each piece of dialog text.
-- Dialog Prompts ==[INCOMPLETE]==
+- Dialog Prompts ![INCOMPLETE](https://img.shields.io/badge/Incomplete-orange)
 	- Next Page Prompt
 	- TextField Prompt
 	- Options Prompt
-- QoL Features ==[INCOMPLETE]==
+- QoL Features ![INCOMPLETE](https://img.shields.io/badge/Incomplete-orange)
 	- Skip the whole dialog.
 	- Automatically go to the next piece of dialog.
 
 ## Setup
-1. Add the system to your project. <br/>
-You have 3 ways to do this, choose the one that fits your project:
+1. Add the system to your project.
+<br/>You have 3 ways to do this, choose the one that fits your project:
 	1. Autoload the DialogManager scene and call fucntions on it from any script. (Singleton Method)
 	2. Add it as a node inside a scene and call functions on it from the scene's script. (Limited)
 	3. Create an instance of it from a script and add it to the current scene then call functions on it. (Limited)
@@ -45,9 +45,9 @@ You have 3 ways to do this, choose the one that fits your project:
 	defined below by connecting them to your settings page but this will only work using the Singleton method.
 	Otherwise, you will have to save the player's settings and pass them to the DialogManager instance or node
 	through a script.
-3. Set the default theme. <br/>
-	You can do that in the DefaultDialog.tscn, both in Godot engine editor and inside the script
-	attached to the scene.
+3. Set the default theme.
+<br/>You can do that in the DefaultDialog.tscn, both in Godot engine editor and inside the script
+attached to the scene.
 4. Define the emotions.
 5. Define the characters.
 
