@@ -53,7 +53,7 @@ func apply_settings(settings: Dictionary):
 			AudioServer.set_bus_mute(0, settings.audio[bus].mute)
 	
 	if settings.has("window"):
-		# Set window mode
+		# TODO: Set window mode 0, 1, 2
 		get_window().set_mode(settings.window.mode)
 		# Set resolution and center window
 		var window_size = settings.window.resolution.split("x")
