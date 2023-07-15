@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgfvhlq0uf7rg"]
+
+[ext_resource type="Texture2D" uid="uid://coj8bh24jpym8" path="res://Dialog_System/Assets/dialog_box.png" id="1_cfhwi"]
+
+[node name="DialogBox" type="NinePatchRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_cfhwi")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2

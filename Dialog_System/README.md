@@ -12,8 +12,8 @@ you will have to adjust the code a bit.
 <br/>This system uses Godot engine's RichTextLabel node to display dialog text, RichTextLabel allows for
 complex formatting using [BBCodes](https://docs.godotengine.org/en/stable/tutorials/ui/bbcode_in_richtextlabel.html).
 I will be extending that to add more tags and text effects as defined in the documentation [section](#tags).
-- Dialog Box Customization ![INCOMPLETE](https://img.shields.io/badge/Incomplete-orange)
-	- The ability to change almost everything about the dialog box (colors, textures, layout...).
+- Dialog Customization ![INCOMPLETE](https://img.shields.io/badge/Incomplete-orange)
+	- The ability to change almost everything about the dialog (colors, textures, layout...).
 	- The ability to set and use a single theme or varying themes based on the speaking character.
 - Dialog Characters ![INCOMPLETE](https://img.shields.io/badge/Incomplete-orange)
 	- Define the characters within the game with their name, portraits, theme, sound, etc.
@@ -30,7 +30,10 @@ I will be extending that to add more tags and text effects as defined in the doc
 	- Options Prompt
 - QoL Features ![INCOMPLETE](https://img.shields.io/badge/Incomplete-orange)
 	- Skip the whole dialog.
-	- Automatically go to the next piece of dialog.
+	- Toggle automatic next dialog.
+	- Toggle typewritter effect.
+	- Toggle text effects (wave, tornado, etc).
+	- Toggle blip sounds.
 
 ## Setup
 1. Add it to your project, you have 3 ways to do this.
@@ -74,6 +77,7 @@ portraits, you have to catch that signal and handle it.
 	- SpeakerPortrait
 	- TextFieldPrompt
 	- OptionsPrompt
+	- Character
 ### Dialog Manager
 - Signals
 	- emote
@@ -84,9 +88,10 @@ portraits, you have to catch that signal and handle it.
 	- next_prompt: NextPrompt
 	- speaker_name: SpeakerName
 	- speaker_portrait: SpeakerPortrait
-	- emotions: Enum
 	- characters: Dictionary
+	- emotions: Enum
 	- speed: int
+	- letter_blip_enabled: bool
 - Methods
 	- setget: speed
 ### Dialog Box
@@ -96,3 +101,12 @@ portraits, you have to catch that signal and handle it.
 	None
 - Methods
 	- void set_panel()
+### Character
+- Signals
+	None
+- Variables
+	blip_sounds: Dictionary
+- Methods
+	- void play_blip(letter: String)
+	<br/>If `letter_blip_enabled` in DialogManager is set to true it will find the sound that has
+	the same name as the letter and plays it. Otherwise, it will play a random sound.
