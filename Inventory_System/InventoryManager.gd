@@ -1,4 +1,4 @@
-# Inventory.gd - A script for managing player's inventory.
+# InventoryManager.gd - A script for managing player's inventory.
 extends Node
 
 @export var INVENTORY_CAPACITY = 10
