@@ -21,6 +21,10 @@ SceneManager="*res://Scene_Manager/SceneManager.tscn"
 SaveManager="*res://Save_Manager/SaveManager.tscn"
 Globals="*res://Globals.tscn"
 
+[gui]
+
+theme/custom_font="res://Assets/Peaberry-Base.otf"
+
 [importer_defaults]
 
 texture={

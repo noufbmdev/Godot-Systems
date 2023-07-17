@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://24kc5g4nq2ka"]
+[gd_scene load_steps=3 format=3 uid="uid://24kc5g4nq2ka"]
 
-[node name="DialogManager" type="Node2D"]
+[ext_resource type="Script" path="res://Dialog_System/Nodes/DialogManager.gd" id="1_e5g0f"]
+[ext_resource type="PackedScene" uid="uid://dgfvhlq0uf7rg" path="res://Dialog_System/Nodes/DialogBox.tscn" id="2_8pk7u"]
+
+[node name="DialogManager" type="Control" node_paths=PackedStringArray("dialog_box")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e5g0f")
+dialog_box = NodePath("DialogBox")
+
+[node name="DialogBox" parent="." instance=ExtResource("2_8pk7u")]
+layout_mode = 1
+offset_top = 422.0

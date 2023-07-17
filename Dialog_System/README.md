@@ -32,6 +32,7 @@ I will be extending that to add more tags and text effects as defined in the doc
 	- Options Prompt
 - QoL Features ![INCOMPLETE](https://img.shields.io/badge/Incomplete-orange)
 	- Skip the whole dialog.
+	- Skip typewritter effect.
 	- Toggle automatic next dialog.
 	- Toggle typewritter effect.
 	- Toggle text effects (wave, tornado, etc).
@@ -69,17 +70,15 @@ signal and handle it the way you see fit. By default, the system will try to dis
 portrait for each emotion. In the case that you are developing a 3D game and don't want to use
 portraits, you have to catch that signal and handle it.
 ### Nodes
-- Required Nodes
-	- DialogManager
-	- DialogBox
-	- DialogText
-- Optional Nodes
-	- NextPrompt
-	- SpeakerName
-	- SpeakerPortrait
-	- TextFieldPrompt
-	- OptionsPrompt
-	- Character
+- DialogManager (Required)
+- DialogBox (Required)
+	- SpeakerName: Label
+	- DialogText: RichTextLabel (Required)
+	- SpeakerPortrait: TextureRect
+	- NextPrompt: TextureRect
+- TextFieldPrompt
+- OptionsPrompt
+- Character
 ### Dialog Manager
 - Signals
 	- emote
@@ -92,23 +91,38 @@ portraits, you have to catch that signal and handle it.
 	- speaker_portrait: SpeakerPortrait
 	- characters: Dictionary
 	- emotions: Enum
-	- speed: int
+	- text_speed: int
 	- letter_blip_enabled: bool
 - Methods
-	- setget: speed
-### Dialog Box
+	- setget: text_speed
+### DialogBox
 - Signals
-	None
+	- next
 - Variables
-	None
+	- dialog_text: RichTextLabel
+	- speaker_name: Label
+	![OPTIONAL](https://img.shields.io/badge/Optional-purple)
+	- speaker_portrait: TextureRect
+	![OPTIONAL](https://img.shields.io/badge/Optional-purple)
+	- next_prompt: TextureRect
+	![OPTIONAL](https://img.shields.io/badge/Optional-purple)
+	- next_action: String
+	![OPTIONAL](https://img.shields.io/badge/Optional-purple)
 - Methods
-	- void set_panel()
+	- set_dialog_text(text: String)
+	- get_dialog_text() -> String
+	- get_dialog_text_node() -> RichTextLabel
+	- set_speaker_name(text: String)
+	- get_speaker_name_node() -> Label
+	- set_speaker_portrait(texture: Texture2D)
+	- get_speaker_portrait_node() -> TextureRect
+	- animate_next_prompt():
 ### Character
 - Signals
 	None
 - Variables
 	blip_sounds: Dictionary
 - Methods
-	- void play_blip(letter: String)
+	- play_blip(letter: String) -> void
 	<br/>If `letter_blip_enabled` in DialogManager is set to true it will find the sound that has
 	the same name as the letter and plays it. Otherwise, it will play a random sound.
