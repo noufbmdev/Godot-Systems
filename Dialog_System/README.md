@@ -5,7 +5,7 @@ more complex layouts like having two speakers' portraits fade in and out is not 
 you will have to adjust the code a bit.
 
 <p align="center">
-  <img src="[demo.gif](https://github.com/noufbmdev/Godot-Systems/assets/53019688/65aaa642-633b-4093-8f6b-24bd7729287a)"/>
+  <img src="[demo.gif](https://github.com/noufbmdev/Godot-Systems/assets/53019688/65aaa642-633b-4093-8f6b-24bd7729287a)" alt="animated" />
 </p>
 
 > ℹ️ Try it out!
