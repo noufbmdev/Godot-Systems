@@ -1,4 +1,4 @@
-# Dialog System [PLANNING PHASE]
+# 💬 Dialog System
 The dialog system accepts a string or a list of strings as input, formats the input, handles tags,
 and displays it on the screen. The system allows you to customize almost everything about it but for
 more complex layouts like having two speakers' portraits fade in and out is not supported right now,
@@ -6,8 +6,6 @@ you will have to adjust the code a bit.
 
 > ℹ️ Try it out!
 > Open and run **Dialog_Example.tscn** in Godot engine.
-
-Sound Effects by <a href="https://pixabay.com/users/universfield-28281460/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=147349">UNIVERSFIELD</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=147349">Pixabay</a>
 
 ## Features
 - Dialog Tags ![INCOMPLETE](https://img.shields.io/badge/Incomplete-orange)
@@ -69,6 +67,7 @@ Note that setting the emotion or action of the speaker will send a signal and yo
 signal and handle it the way you see fit. By default, the system will try to display the correct
 portrait for each emotion. In the case that you are developing a 3D game and don't want to use
 portraits, you have to catch that signal and handle it.
+
 ### Nodes
 - DialogManager (Required)
 - DialogBox (Required)
@@ -79,6 +78,7 @@ portraits, you have to catch that signal and handle it.
 - TextFieldPrompt
 - OptionsPrompt
 - Character
+
 ### Dialog Manager
 - Signals
 	- emote
@@ -95,6 +95,7 @@ portraits, you have to catch that signal and handle it.
 	- letter_blip_enabled: bool
 - Methods
 	- setget: text_speed
+
 ### DialogBox
 - Signals
 	- next
@@ -117,6 +118,7 @@ portraits, you have to catch that signal and handle it.
 	- set_speaker_portrait(texture: Texture2D)
 	- get_speaker_portrait_node() -> TextureRect
 	- animate_next_prompt():
+
 ### Character
 - Signals
 	None
