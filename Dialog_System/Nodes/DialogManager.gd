@@ -33,50 +33,52 @@ func _ready():
 	if skip_enabled: dialog_box.next.connect(next_dialog)
 	# Check if cancel key or RMB is pressed to skip the whole dialog
 	if cancel_enabled: dialog_box.cancel.connect(clear_dialog)
+	start_dialog("Hey there! \n Do you sell coffee beans?")
 	start_dialog("The sound is annoying, I know. \n I'm not good at sounds.")
+	start_dialog("I feel very sleepy. \n I just wish I could sleep on a cloud for a change.")
 
 ## Function that starts the dialog, formats the string given to it, handles the
 ## tags inside the string, and displays it correctly on the screen.
 ## @param new_dialog: String, The script that will be displayed on the screen.
 func start_dialog(dialog_script: String):
 	# setup the dialog for running
-	dialog_pieces = dialog_script.split("\n")
-	dialog_box.open()
-	running = true
-	
-	var current_dialog = dialog_pieces[piece_index]
-	var shown_dialog = ""
-	# go over each dialog piece
-	while piece_index < dialog_pieces.size() and running:
-		current_dialog = dialog_pieces[piece_index]
-		dialog_box.set_dialog_text(shown_dialog)
-		# go over each letter in the dialog
-		while current_dialog.length() > 0 and running:
-			shown_dialog = dialog_box.get_dialog_text()
-			dialog_box.set_dialog_text(shown_dialog + current_dialog[0])
-			
-			# Only play a sound if it is an alphabetic.
-			if check_character_type(current_dialog[0]) == Character_Type.ALPHABET and blip_enabled:
-				sound_player.play()
-			
-			current_dialog = current_dialog.substr(1, current_dialog.length())
-			
-			if Input.is_action_pressed(accept_action_name) or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and skip_enabled:
-				shown_dialog = ""
-				break
+	dialog_pieces.append_array(dialog_script.split("\n"))
+	if not running:
+		dialog_box.open()
+		running = true
+		
+		var current_dialog = dialog_pieces[piece_index]
+		var shown_dialog = ""
+		# go over each dialog piece
+		while piece_index < dialog_pieces.size() and running:
+			current_dialog = dialog_pieces[piece_index]
+			dialog_box.set_dialog_text(shown_dialog)
+			# go over each letter in the dialog
+			while current_dialog.length() > 0 and running:
+				shown_dialog = dialog_box.get_dialog_text()
+				dialog_box.set_dialog_text(shown_dialog + current_dialog[0])
 				
-			await get_tree().create_timer(text_speed).timeout
-			
-		if not auto_go_next:
-			await dialog_box.next
-			
-		shown_dialog = ""
-		next_dialog()
-	
-	# end the dialog
-	clear_dialog()
+				# Only play a sound if it is an alphabetic.
+				if get_character_type(current_dialog[0]) == Character_Type.ALPHABET and blip_enabled:
+					sound_player.play()
+				
+				current_dialog = current_dialog.substr(1, current_dialog.length())
+				
+				if Input.is_action_pressed(accept_action_name) or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and skip_enabled:
+					break
+					
+				await get_tree().create_timer(text_speed).timeout
+				
+			if not auto_go_next:
+				await dialog_box.next
+				
+			shown_dialog = ""
+			next_dialog()
+		
+		# end the dialog
+		clear_dialog()
 
-func check_character_type(character: String) -> Character_Type:
+func get_character_type(character: String) -> Character_Type:
 	var alphabet_letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	var numbers = "0123456789"
 	var punctuation = ".,?!:;()-_'\""
