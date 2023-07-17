@@ -4,7 +4,9 @@ and displays it on the screen. The system allows you to customize almost everyth
 more complex layouts like having two speakers' portraits fade in and out is not supported right now,
 you will have to adjust the code a bit.
 
-![dialog_system_gif](https://github.com/noufbmdev/Godot-Systems/assets/53019688/65aaa642-633b-4093-8f6b-24bd7729287a)
+<p align="center">
+  <img src="[demo.gif](https://github.com/noufbmdev/Godot-Systems/assets/53019688/65aaa642-633b-4093-8f6b-24bd7729287a)"/>
+</p>
 
 > ℹ️ Try it out!
 > Open and run **Dialog_Example.tscn** in Godot engine.
