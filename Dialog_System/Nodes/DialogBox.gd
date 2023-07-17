@@ -1,6 +1,7 @@
 class_name DialogBox extends Control
 
 signal next
+signal cancel
 
 # Required Nodes:
 @export var dialog_text: RichTextLabel
@@ -8,7 +9,8 @@ signal next
 @export var speaker_name: Label
 @export var speaker_portrait: TextureRect
 @export var next_prompt: TextureRect
-@export var next_action: String
+@export var next_action: String = "ui_accept"
+@export var cancel_action: String = "ui_cancel"
 
 func _ready():
 	#animate_next_prompt()
@@ -18,10 +20,15 @@ func _input(event):
 	# Keyboard Events
 	if event.is_action_released(next_action):
 		next.emit()
+	if event.is_action_released(cancel_action):
+		cancel.emit()
 	# Mouse Events
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
-			next.emit()
+	if event is InputEventMouseButton and not event.pressed:
+		match event.button_index:
+			MOUSE_BUTTON_LEFT:
+				next.emit()
+			MOUSE_BUTTON_RIGHT:
+				cancel.emit()
 
 func set_dialog_text(text: String):
 	dialog_text.set_text(text)
@@ -50,8 +57,11 @@ func animate_next_prompt():
 	tween.tween_property(next_prompt, "position:y", next_prompt_position_y - 2, 0.5).from_current()
 	tween.chain().tween_property(next_prompt, "position:y", next_prompt_position_y + 2, 0.5).from_current()
 
-func animate_open_dialog():
-	pass
+func open():
+	visible = true
+	# You can add animations here.
 
-func animate_close_dialog():
-	pass
+func close():
+	visible = false
+	set_dialog_text("")
+	# You can add animations here.

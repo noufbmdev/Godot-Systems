@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://24kc5g4nq2ka"]
+[gd_scene load_steps=4 format=3 uid="uid://24kc5g4nq2ka"]
 
 [ext_resource type="Script" path="res://Dialog_System/Nodes/DialogManager.gd" id="1_e5g0f"]
 [ext_resource type="PackedScene" uid="uid://dgfvhlq0uf7rg" path="res://Dialog_System/Nodes/DialogBox.tscn" id="2_8pk7u"]
+[ext_resource type="AudioStream" uid="uid://df1krfnrkcmfs" path="res://Dialog_System/Assets/Blip.wav" id="3_g5a03"]
 
-[node name="DialogManager" type="Control" node_paths=PackedStringArray("dialog_box")]
+[node name="DialogManager" type="Control" node_paths=PackedStringArray("dialog_box", "sound_player")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +13,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e5g0f")
 dialog_box = NodePath("DialogBox")
+sound_player = NodePath("AudioStreamPlayer")
 
 [node name="DialogBox" parent="." instance=ExtResource("2_8pk7u")]
 layout_mode = 1
 offset_top = 422.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_g5a03")
