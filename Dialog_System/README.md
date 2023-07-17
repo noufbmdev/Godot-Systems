@@ -4,7 +4,7 @@
   <img src="https://github.com/noufbmdev/Godot-Systems/assets/53019688/762553ac-b8b9-406e-8a96-1a14c7ea114f" alt="animated" />
 </p>
 
-The dialog system accepts a string or a list of strings as input, formats the input, handles tags,
+The dialog system can read a txt file or take a string as input, formats the input, handles tags,
 and displays it on the screen. The system allows you to customize almost everything about it but for
 more complex layouts like having two speakers' portraits fade in and out is not supported right now,
 you will have to adjust the code a bit.
