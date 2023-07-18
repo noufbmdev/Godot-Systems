@@ -1,0 +1,11 @@
+[character=bruce]
+[speed=0.3]
+What are you doing?!
+
+[character=alan]
+[speed=0.1]
+I'm trying to make these turn around...[pause=1]Look, it's working![emotion=happy]
+
+[character=Bruce]
+Good job Alan, here now take these and [pulse freq=5.0 height=2.0]fit[/pulse] them.[action=give]
+Try not to break them, they are quite delicate.

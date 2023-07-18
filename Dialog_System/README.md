@@ -3,8 +3,7 @@
 <p align="center">
   <img src="https://github.com/noufbmdev/Godot-Systems/assets/53019688/762553ac-b8b9-406e-8a96-1a14c7ea114f" alt="animated" />
 </p>
-
-The dialog system can read a txt file or take a string as input, formats the input, handles tags,
+The dialog system accepts a string or a list of strings as input, formats the input, handles tags,
 and displays it on the screen. The system allows you to customize almost everything about it but for
 more complex layouts like having two speakers' portraits fade in and out is not supported right now,
 you will have to adjust the code a bit.
@@ -61,12 +60,14 @@ attached to the scene.
 
 ## Documentation
 ### Tags
-| Tag     | Description                                         |
-|---------|-----------------------------------------------------|
-| speed   | Change the speed at which each letter is displayed. |
-| pause   | Pause the text for any number of seconds.           |
-| emotion | Set the emotion of the current speaker.             |
-| action  | Set the action of the current speaker.              |
+| Tag       | Description                                         |
+|-----------|-----------------------------------------------------|
+| speed     | Change the speed at which each letter is displayed. |
+| pause     | Pause the text for any number of seconds.           |
+| character | Set the current speaking character.                 |
+| emotion   | Set the emotion of the current speaker.             |
+| action    | Set the action of the current speaker.              |
+| pulse     | Pulsing text effect.                                |
 
 Note that setting the emotion or action of the speaker will send a signal and you can catch that
 signal and handle it the way you see fit. By default, the system will try to display the correct
@@ -97,9 +98,9 @@ portraits, you have to catch that signal and handle it.
 	- characters: Dictionary
 	- emotions: Enum
 	- text_speed: int
-	- letter_blip_enabled: bool
+	- blip_enabled: bool
 - Methods
-	- setget: text_speed
+	- None
 
 ### DialogBox
 - Signals
@@ -131,5 +132,5 @@ portraits, you have to catch that signal and handle it.
 	blip_sounds: Dictionary
 - Methods
 	- play_blip(letter: String) -> void
-	<br/>If `letter_blip_enabled` in DialogManager is set to true it will find the sound that has
+	<br/>If `blip_enabled` in DialogManager is set to true it will find the sound that has
 	the same name as the letter and plays it. Otherwise, it will play a random sound.

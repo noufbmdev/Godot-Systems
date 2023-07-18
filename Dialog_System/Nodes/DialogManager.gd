@@ -1,8 +1,10 @@
 extends Control
 
-enum Emotions { NORMAL, SHOCKED }
+# Define all the emotions here:
+enum Emotions { NORMAL, HAPPY, SHOCKED }
 enum Character_Type {ALPHABET, NUMBER, PUNCTUATION, OTHER}
 
+# The dialog box node.
 @export var dialog_box: Control
 # The AudioStreamPlayer node used to play the sound.
 @export var sound_player: AudioStreamPlayer
@@ -23,19 +25,31 @@ enum Character_Type {ALPHABET, NUMBER, PUNCTUATION, OTHER}
 # The input map action name for canceling.
 @export var cancel_action_name: String = "ui_cancel"
 
+# Stores all characters in the game.
+var characters: Array
 # Stores each piece of dialog broken by a newline in the dialog_script.
 var dialog_pieces: Array
+# Keeps track of the currently shown dialog's index inside dialog_pieces.
 var piece_index: int
+# Keeps track of whether the dialog is running.
 var running: bool
 
 func _ready():
+	# Define all characters here:
+	var character = Character.new()
+	characters.append(character.create("Bruce", Color.CORNFLOWER_BLUE, "", "", "", ""))
+	characters.append(character.create("Alan", Color.MEDIUM_SEA_GREEN, "", "", "", ""))
+	
 	# Check if accept key or LMB is pressed to go to next dialog
 	if skip_enabled: dialog_box.next.connect(next_dialog)
 	# Check if cancel key or RMB is pressed to skip the whole dialog
 	if cancel_enabled: dialog_box.cancel.connect(clear_dialog)
+	
+	## TESTING ##
 	start_dialog("Hey there! \n Do you sell coffee beans?")
 	start_dialog("The sound is annoying, I know. \n I'm not good at sounds.")
 	start_dialog("I feel very sleepy. \n I just wish I could sleep on a cloud for a change.")
+	## TESTING ##
 
 ## Function that starts the dialog, formats the string given to it, handles the
 ## tags inside the string, and displays it correctly on the screen.
@@ -78,6 +92,10 @@ func start_dialog(dialog_script: String):
 		# end the dialog
 		clear_dialog()
 
+func read_dialog(file_path: String):
+	var script = read_file(file_path)
+	start_dialog(script)
+
 func get_character_type(character: String) -> Character_Type:
 	var alphabet_letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	var numbers = "0123456789"
@@ -112,6 +130,7 @@ func clear_dialog():
 	piece_index = 0
 	dialog_box.close()
 
+## Function that moves the cursor to the next piece of dialog.
 func next_dialog():
 	print(piece_index)
 	dialog_box.set_dialog_text("")
