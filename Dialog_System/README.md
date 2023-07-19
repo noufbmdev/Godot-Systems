@@ -25,7 +25,6 @@ I will be extending that to add more tags and text effects as defined in the doc
 - Dialog Emotion ![INCOMPLETE](https://img.shields.io/badge/Incomplete-orange)
 	- You can set an unlimited number of emotions for the characters.
 	- Attach a portrait of each character for each emotion.
-	
 - Dialog Sounds ![INCOMPLETE](https://img.shields.io/badge/Incomplete-orange)
 	- Enable and define Blip sounds for each character.
 	- Enable and define audio for each piece of dialog text.

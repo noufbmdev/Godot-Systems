@@ -1,22 +1,24 @@
 # Godot 4.0+ Systems
 
-Ready to use systems that you can add to your 2D projects easily,
-currently there are 2 available systems and a few planned systems!
+Ready to use systems that you can add to your 2D projects easily. No need for credit but would
+appreciate it if you do 💗
 
-## Available Systems
-1. Scene Manager: Transitions, loading screen, pause screen, BGM audio fade, and more.
-2. Save System: Manual save, autosave, single/multiple saves, and more.
+Originally I am creating and using these systems in my games, now I am trying to modularize them here 
+so that it would be usable in any other context and I am sharing them for free because I love Godot
+and hope for its success and popularity 💗.
 
-## Planned Systems
-1. Inventory System: Player inventory, single/various slot size, global storage, and more.
-2. Quest System: One-time/reocurrent quest, quest chaining, quest trigger, and more.
-3. Settings Manager: Audio, screen resolution, screen mode, and languages.
-4. Upgrade System: Tree-based, graph-based, linear.
-5. Player Effects: Consumables, on hit, on ground, etc.
-6. Input Manager: Key image mapping, user interface audio.
-7. Date and Time System: Weather, day/night cycle, calendar, seasons, events.
-8. Notification Manager: Triggers by position or action, linear tutorial.
-9. Building System: Procedural world/level generation, manual building.
-10. Crafting System: Recipe-based, mix and match.
-11. Dialog System: Typewritter effect, key press audio, blip sounds.
-12. Bug Reporting System: Integration with Jira and Bugzilla.
+## Systems
+- 🎬 Scene Manager ![TAG](https://img.shields.io/badge/In_Development-blue)
+- 💾 Save Manager ![TAG](https://img.shields.io/badge/In_Development-blue)
+- 🎒 Inventory System ![TAG](https://img.shields.io/badge/In_Development-blue)
+- 📜 Quest System ![TAG](https://img.shields.io/badge/In_Development-blue)
+- 💬 Dialog System ![TAG](https://img.shields.io/badge/In_Development-blue)
+- ⚙️ Settings Manager: Audio, screen resolution, screen mode, and languages. ![TAG](https://img.shields.io/badge/Not_Ready-red)
+- ⏫ Upgrade System: Tree-based, graph-based, linear. ![TAG](https://img.shields.io/badge/Not_Ready-red)
+- 📅 Date and Time System: Weather, day/night cycle, calendar, seasons, events. ![TAG](https://img.shields.io/badge/Not_Ready-red)
+- 🔔 Notification Manager: Triggers by position or action, linear tutorial. ![TAG](https://img.shields.io/badge/Not_Ready-red)
+- 📣 Event Manager: Decoupling through event broadcasting ![TAG](https://img.shields.io/badge/Not_Ready-red)
+- 🏗️ Building System: Procedural world/level generation, manual building. ![TAG](https://img.shields.io/badge/Not_Ready-red)
+- 🔨 Crafting System: Recipe-based, mix and match. ![TAG](https://img.shields.io/badge/Not_Ready-red)
+- 🐛 Bug Reporting System: Integration with Jira and Bugzilla. ![TAG](https://img.shields.io/badge/Not_Ready-red)
+- 🎮 Input Manager: Key image mapping, user interface audio. ![TAG](https://img.shields.io/badge/Not_Ready-red)

@@ -1,17 +1,24 @@
-## Planned Features
-- Camera Zoom
+# 🎬 Scene Manager
+
+> ℹ️ Try it out!
+> Open and run **Scene_Example.tscn** in Godot engine.
+
+## Features
+- Scene Transitions
+	- BGM Audio Fade
+- Loading Screen
 - Pause Screen
+- Camera Zoom
 - Scene Teleport
 
-## Guide
-
-An instance of the scene manager needs to be globally accessible,
-In godot you can achieve that through autoload.
-
+## Setup
+An instance of the scene manager needs to be globally accessible, in godot you can achieve that
+through autoload.
 1. Autoload SceneManager.tscn: Project > Project Settings > Autoload
 2. Call functions on SceneManager: ```SceneManager.function()```
 
-> Open the example scene in this folder to test it out.
+## Documentation
+### Nodes
 
 ### Options
 - `LOADING_ENABLED` : bool - Enable loading screen.

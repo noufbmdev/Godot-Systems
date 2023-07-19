@@ -1,12 +1,22 @@
-## Guide
+# 💾 Save Manager
 
-An instance of the scene manager needs to be globally accessible,
-In godot you can achieve that through autoload.
+> ℹ️ Try it out!
+> Open and run **Save_Example.tscn** in Godot engine.
 
+## Features
+- Single Save
+- Multiple Saves
+- Autosave
+	- It can be triggered (enter new area) or periodic (every 10 mins).
+
+## Setup
+An instance of the scene manager needs to be globally accessible, in godot you can achieve that
+through autoload.
 1. Autoload SaveManager.tscn: Project > Project Settings > Autoload
 2. Call functions on SaveManager: ```SaveManager.function()```
 
-> Open the example scene in this folder to test it out.
+## Documentation
+### Nodes
 
 ### Options
 - `AUTOSAVE_ENABLED: bool` - Enable autosave.
