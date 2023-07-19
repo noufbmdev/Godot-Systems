@@ -1,11 +1,10 @@
 # Godot 4.0+ Systems
 
-Ready to use systems that you can add to your 2D projects easily. No need for credit but would
-appreciate it if you do 💗
-
-Originally I am creating and using these systems in my games, now I am trying to modularize them here 
+Ready to use systems that you can add to your 2D projects easily. Originally I am creating and using these systems in my games, now I am trying to modularize them here 
 so that it would be usable in any other context and I am sharing them for free because I love Godot
 and hope for its success and popularity 💗.
+
+No need for credit but would appreciate it if you do 💗✌️
 
 ## Systems
 - 🎬 Scene Manager ![TAG](https://img.shields.io/badge/In_Development-blue)
